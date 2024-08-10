@@ -1,0 +1,24 @@
+﻿* Encoding: UTF-8.
+* 06_01_Frequencies.
+
+* Dataset: StateTrends.sav.
+
+* DEFAULT ANALYSIS FOR CATEGORICAL VARIABLES.
+
+FREQUENCIES VARIABLES=region psych_region has_any
+  /ORDER=ANALYSIS.
+
+* Add bar charts, display in descending frequencies.
+FREQUENCIES VARIABLES=region psych_region has_any
+  /BARCHART FREQ
+  /FORMAT=DFREQ
+  /ORDER=ANALYSIS.
+
+* QUANTITATIVE VARIABLES.
+
+FREQUENCIES VARIABLES=b5_1 TO b5_5
+  /FORMAT=NOTABLE
+  /NTILES=4
+  /STATISTICS=STDDEV MINIMUM MAXIMUM MEAN
+  /HISTOGRAM NORMAL
+  /ORDER=ANALYSIS.
